@@ -1,0 +1,26 @@
+<div class="pad">
+  <div class="margin-bt" ng-hide="cycle">
+    <button ui-sref="reviewTeam({teamId: 0, cycle: 1})" class="btn btn-primary btn-lg ">Cycle</button>
+  </div>
+  <div class="inline">
+    <div class="review-team pad content-bg clickable" ui-sref="reviewTeam({teamId: $index})"
+         ng-repeat="team in teams">
+      <h2 class="pad-bt">{{team.name}}</h2>
+      <div class="row">
+        <div style="width:50%">
+          <div class="row" style="height:40px" ng-repeat="draftPick in teamPicks[$index].starters track by $index">
+            <span class="bold" style="width:60px">{{draftPick.position.toUpperCase()}}</span>
+            <span>{{draftPick.player.firstName}} {{draftPick.player.lastName}}</span>
+          </div>
+        </div>
+
+        <div class="text-top pad-lt" style="width:50%">
+          <div class="row" style="height:40px" ng-repeat="draftPick in teamPicks[$index].bench track by $index">
+            <span class="bold" style="width:60px">Bench</span>
+            <span>{{draftPick.player.firstName}} {{draftPick.player.lastName}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

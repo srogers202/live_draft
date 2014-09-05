@@ -1,0 +1,23 @@
+<div class="content-bg center-content bottom" ng-class="{'review-team-full':review}" ng-if="teamPicks">
+  <div class="row">
+
+    <div id="starters" style="width:50%">
+      <div class="row margin-bt-sm" style="height:80px" ng-repeat="draftPick in teamPicks.starters track by $index">
+        <div class="marker" ng-class="{'primary-bg' : draftPick.pick === currentPick.pick && !review}">
+          {{draftPick.position.toUpperCase()}}
+        </div>
+        <div ng-include="'views/draft/player.html'"></div>
+      </div>
+    </div>
+
+    <div id="bench" style="width:50%">
+      <div class="row margin-bt-sm" style="height:80px" ng-repeat="draftPick in teamPicks.bench track by $index">
+        <div class="marker" ng-class="{'primary-bg' : draftPick.pick === currentPick.pick && !review}">
+          Bench
+        </div>
+        <div ng-include="'views/draft/player.html'"></div>
+      </div>
+    </div>
+
+  </div>
+</div>

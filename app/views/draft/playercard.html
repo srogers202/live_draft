@@ -1,0 +1,114 @@
+<div id="player-card" bindonce>
+  <div id="info" class="content-bg">
+    <div class="row">
+      <div>
+        <img src="images/player/{{player._id}}.jpg" fallback-img-src="images/player/none.jpg"
+             class="card-img" height="220" width="165" />
+      </div>
+      <div class="pad-lt-med max text-top">
+        <div>
+          <h3 class="semibold">
+            <span ng-if="player.position !== 'DST'">
+              {{player.position}} {{player.firstName}} {{player.lastName}} |
+            </span>
+            <span ng-if="player.position === 'DST'" ng-style="{'color':team.primaryHexColor}">
+              {{player.firstName}} {{player.lastName}}
+            </span>
+            <span ng-if="player.position !== 'DST'" ng-style="{'color':team.primaryHexColor}">
+              {{team.city}} {{team.mascot}}
+            </span>
+            <span ng-if="player.position !== 'DST' && player.team !== -1">
+              <span>| #{{player.number}}</span>
+            </span>
+          </h3>
+        </div>
+        <div class="inline margin-tp">
+          <div>
+            <div class="inline">
+              <div class="info-box" ng-style="{'background':team.primaryHexColor}">
+                <div>OVR</div>
+                <div class="num">{{player.espnRank || '?'}}</div>
+              </div>
+              <div class="info-box" ng-if="player.espnRank !== undefined" ng-style="{'background':team.primaryHexColor}">
+                <div>POS</div>
+                <div class="num" position-rank="player._id" overall="player.espnRank">
+                </div>
+              </div>
+              <div class="info-box" ng-style="{'background':team.primaryHexColor}" ng-if="team.byeWeek" >
+                <div>BYE</div>
+                <div class="num">{{team.byeWeek}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="margin-lt align-tp">
+            <button ng-if="keeper" class="btn btn-success btn-lg">
+              Keeper
+            </button>
+            <button ng-if="drafted" class="btn btn-primary btn-disabled btn-lg">
+              Drafted
+            </button>
+            <button ng-if="!drafted && !keeper" class="btn btn-primary btn-lg"
+                    ng-click="draftPlayer(player._id)">
+              Draft
+            </button>
+          </div>
+         </div>
+         <div class="inline margin-tp">
+           <div ng-if="player.position !== 'DST'">
+             <div>
+               <span>Height:</span>
+               <span class="bold">{{playerData.height}}</span>
+             </div>
+             <div>
+               <span>Weight:</span>
+               <span class="bold">{{playerData.weight}}</span>
+             </div>
+             <div>
+               <span>DOB:</span>
+               <span class="bold"><span ng-bind="playerData.birthDate | date:'mediumDate'"></span>
+               (<span ng-bind="playerData.birthDate | age"></span>)</span>
+             </div>
+             <div>
+               <span>Experience:</span>
+               <span class="bold"><span ng-bind="playerData.experience | experience"></span>
+             </div>
+           </div>
+           <div ng-if="player.position === 'DST'">
+             <div>
+               <span>Coordinator:</span>
+               <span class="bold">{{playerData.defensiveCoordinator}}</span>
+            </div>
+             <div>
+               <span>Scheme:</span>
+               <span class="bold">{{playerData.defenseScheme}}</span>
+             </div>
+             <div>
+               <span>Overall Rank:</span>
+               <span class="bold">{{playerData.ovrDefenseRank}}</span>
+             </div>
+           </div>
+           <div ng-if="player.position !== 'DST'" class="text-top pad-lt">
+             <div ng-if="playerData.draftedText">
+               <span>Drafted:</span>
+               <span class="bold">{{playerData.draftedText}}</span>
+             </div>
+             <div ng-if="playerData.college">
+               <span>College:</span>
+               <span class="bold">{{playerData.college}}</span>
+             </div>
+           </div>
+           <div ng-if="player.position === 'DST'" class="text-top pad-lt">
+             <div>
+               <span>Pass Rank:</span>
+               <span class="bold">{{playerData.passRank}}</span>
+             </div>
+             <div>
+               <span>Rush Rank:</span>
+               <span class="bold">{{playerData.rushRank}}</span>
+             </div>
+           </div>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>

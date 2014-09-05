@@ -1,0 +1,55 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>1st&5 2014 Draft</title>
+    <meta name="description" content="The only thing better than 1st & 10 is having the advantage of 1st&5">
+    <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width" />
+    <!-- build:css({.tmp,app}) styles/styles.css -->
+    <link rel="stylesheet" href="styles/font-awesome.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="firstAndFiveDraft">
+
+    <div ng-include="'views/layout/header.html'"></div>
+    <ui-view></ui-view>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-local-storage/angular-local-storage.js"></script>
+    <script src="bower_components/angular-scroll/angular-scroll.min.js"></script>
+    <script src="bower_components/angular-bindonce/bindonce.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/fastclick/lib/fastclick.js"></script>
+    <script src="bower_components/angular-timer/dist/angular-timer.js"></script>
+    <script src="bower_components/angular-youtube-mb/src/angular-youtube-embed.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/shared/commonModel.js"></script>
+    <script src="scripts/constants/constants.js"></script>
+    <script src="scripts/directives/utilDirective.js"></script>
+    <script src="scripts/directives/playerDirective.js"></script>
+    <script src="scripts/controllers/welcomeController.js"></script>
+    <script src="scripts/controllers/team.controller.js"></script>
+    <script src="scripts/controllers/draft.controller.js"></script>
+    <script src="scripts/controllers/headerController.js"></script>
+    <script src="scripts/controllers/easterEgg.controller.js"></script>
+    <script src="scripts/controllers/review.controller.js"></script>
+    <script src="scripts/controllers/reviewTeam.controller.js"></script>
+    <script src="scripts/services/utilService.js"></script>
+    <script src="scripts/services/draft.service.js"></script>
+    <script src="scripts/services/playerService.js"></script>
+    <script src="scripts/services/teamService.js"></script>
+    <script src="scripts/filters/playerFilter.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

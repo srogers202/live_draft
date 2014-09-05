@@ -1,0 +1,22 @@
+<div class="sidebar-right">
+  <div class="section-header center">
+    <h1>Round <round pick="currentPick.pick"></round>, Pick {{currentPick.pick}}</h1>
+  </div>
+  <div id="pick-list" class="list-container-right">
+    <a id="pick-top"></a>
+    <ul class="list">
+      <li bindonce id="pick-{{draftPick.pick}}" class="item"
+          ng-repeat="draftPick in draftPicks track by draftPick.pick"
+          ng-class="{disabled: draftPick.player, live: draftPick.pick === currentPick.pick}">
+        <div class="row pick">
+          <div class="num" bo-text="draftPick.pick"></div>
+          <div class="team" bo-text="draftPick.team"></div>
+          <div class="player">
+            {{draftPick.player.firstName}} {{draftPick.player.lastName}}
+            <span class="primary-color" ng-if="draftPick.keeper">K</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+.fade {
+  &.ng-leave { 
+    transition: 0.5s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space:nowrap;
+  } 
+
+  &.ng-leave.ng-leave-active {
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+  }
+}

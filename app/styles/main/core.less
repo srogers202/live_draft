@@ -1,0 +1,145 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6,
+p, pre, a, img, small, strike, strong, sub, sup,
+i, dl, dt, dd, ol, ul, li, fieldset, form, label,
+table, tbody, thead, tr, th, td, nav {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+}
+body {
+  -webkit-touch-callout: none;
+  -webkit-text-size-adjust: none;
+  -webkit-user-select: none;
+  background-attachment: fixed;
+  font-family: Exo2-Regular;
+  font-size: 14px;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  background: @app-background-color;
+  color: #fff;
+}
+button {
+  font-family: Exo2-Regular;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: @primary-active-color;
+}
+p {
+  margin-bottom: 15px;
+}
+
+ul, li {
+  list-style-type: none;
+}
+li {
+  cursor: pointer;
+}
+.max {
+  width: 100%;
+}
+.auto-width {
+  width: auto;
+}
+.left {
+  float:left;
+}
+.right {
+  float: right !important;
+}
+.center-rt {
+  vertical-align: middle;
+  text-align: right;
+}
+.clear {
+  clear: both;
+}
+.lineup {
+  overflow: auto;
+  width: 100%;
+  > * {
+    float:left;
+  }
+}
+.wrap {
+  word-break: break-word;
+}
+.clickable {
+  cursor: pointer;
+}
+.block {
+  display: block;
+}
+.show {
+  display: block !important;
+}
+.hide {
+  display:none !important;
+}
+.height-max {
+  height: 100%;
+}
+.text-top {
+  vertical-align: top !important;
+}
+.text-middle {
+  vertical-align: middle;
+}
+.text-left {
+  text-align: left;
+}
+.inline > * {
+  display: inline-block;
+}
+.align-tp {
+  vertical-align: top;
+}
+#spinner {
+  display:none;
+}
+.row {
+  display: table;
+  width: 100%;
+  > * {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+.border-lt {
+  border-left: 1px solid #ddd;
+}
+.border-rt {
+  border-right: 1px solid #ddd;
+}
+.border-tp {
+  border-top: 2px solid #ddd;
+}
+.border-bt {
+  border-bottom: 2px solid #ddd;
+}
+.center {
+  text-align: center !important;
+}
+.content-bg {
+  background: #fff;
+  color: #333;
+}
+.light-bg {
+  background: #f1f1f1;
+}
+.primary-bg {
+  background: @primary-color !important;
+  color: #fff;
+}
+.primary-color {
+  color: @primary-color !important;
+}
+.fixed {
+  position: fixed;
+}

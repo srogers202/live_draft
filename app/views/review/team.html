@@ -1,0 +1,9 @@
+<div ng-if="teamPicks">
+  <div class="margin-lt margin-tp left" ng-hide="cycle">
+    <button ui-sref="review" class="btn btn-primary btn-lg ">Back</button>
+  </div>
+
+  <h1 class="center">{{team.name}}</h1>
+  
+  <div ng-include="'views/draft/team.html'"></div>
+</div>

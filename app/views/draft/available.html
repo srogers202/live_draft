@@ -1,0 +1,41 @@
+<div class="sidebar">
+  <ul class="filter section-header">
+    <li ng-repeat="posFilter in positionFilters" class="pos-filter"
+      ng-click="togglePosition(posFilter)"
+      ng-class="{'active':posFilter==positionFilter}">
+      <div>{{posFilter.toUpperCase()}}</div>
+    </li>
+    <li class="pos-filter right" ng-click="config.searchPlayer=true">
+      <i class="fa fa-search" style="color:#333"></i>
+    </li>
+    <div class="player-search" ng-show="config.searchPlayer">
+      <input id="player-search" class="form-control" type="search" ng-model="config.playerQuery"
+             ng-show="config.searchPlayer" placeholder="Search players...">
+      <button class="btn btn-error" ng-click="config.searchPlayer=false;config.playerQuery=''">
+        Clear
+      </button>
+    </div>
+  </ul>
+  <div id="available-list" class="list-container">
+    <a id="available-top"></a>
+    <ul class="list">
+      <li bindonce bo-id="'player-' + player._id" class="item fade"
+          ng-repeat="availablePlayer in availablePlayers track by availablePlayer._id"
+          ng-init="player=common.getPlayer(availablePlayer._id);team=common.getTeam(player.team)"
+          ng-click="showPlayer(player._id)"
+          ng-show="player | playerSearch:player:config.playerQuery"
+          ng-class="{selected: player._id === activePlayerId,
+                     noheight: player.position.toLowerCase() !== positionFilter &&
+                     positionFilter != 'all'}">
+        <div class="row player">
+          <div class="num" bo-text="availablePlayer.rank"></div>
+          <div class="pos" bo-text="player.position"></div>
+          <div class="name">
+            <span bo-text="player.firstName"></span> <span bo-text="player.lastName"></span>
+          </div>
+          <div class="team" bo-text="team.abbreviation"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

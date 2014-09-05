@@ -1,0 +1,12 @@
+<div ng-include="'views/draft/available.html'"></div>
+<div class="center-content">
+  <div ng-include="'views/draft/playercard.html'"></div>
+  <div class="margin-tp" ng-controller="Team" ng-include="'views/draft/team.html'"></div>
+</div>
+<div ng-include="'views/draft/picks.html'"></div>
+<div ng-include="'views/draft/video.html'"></div>
+
+<div ng-show="firstandfiveEgg" style="position:absolute;margin:0 auto;border:20px solid;background-color:#fff;color:#333;padding:100px;width:100%;z-index:999;text-align:center">
+  <h1>This pick was brought to you by</h1>
+  <img class="logo" src="images/logo.png">
+</div>

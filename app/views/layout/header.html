@@ -1,0 +1,14 @@
+<header ng-controller="HeaderController">
+  <div class="left text-left">
+    <h2 style="line-height:50px">2014 Draft</h2>
+    <h4 style="line-height:15px">Eskimo Bros and Vinegar Strokes</h4>
+  </div>
+  <div class="right">
+    <img class="logo" src="images/logo.png">
+  </div>
+  <div class="timer" ng-if="showTimer">
+    <timer autostart="false" interval="1000" countdown="120">
+      {{mminutes}}:{{sseconds}}
+    </timer>
+  </div>
+</header>

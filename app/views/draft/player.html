@@ -1,0 +1,25 @@
+<div>
+  <div class="row" ng-if="draftPick.pick">
+    <div style="width:60px">
+      <img src="images/player/{{draftPick.player._id}}.jpg" fallback-img-src="images/player/none.jpg"
+           class="card-img" height="80" width="60" />
+    </div>
+    <div class="player-tag">
+      <h4 class="semibold">
+        <span ng-if="draftPick.player.position !== 'DST'">{{draftPick.player.position}}</span>
+        <span>{{draftPick.player.firstName}} {{draftPick.player.lastName}}</span>
+        <span ng-if="draftPick.player.position !== 'DST'"
+              ng-style="{'color':common.getTeam(draftPick.player.team).primaryHexColor}">
+          | {{common.getTeam(draftPick.player.team).city}} {{common.getTeam(draftPick.player.team).mascot}}
+        </span>
+      </h4>
+      <h5>
+        <span>Round <round pick="draftPick.pick"></round>, Pick {{draftPick.pick}}</span>
+      </h5>
+      <h5 ng-if="common.getTeam(draftPick.player.team).byeWeek">
+        <span>Bye: </span>
+        <span class="bold">{{common.getTeam(draftPick.player.team).byeWeek}}</span>
+      </h5>
+    </div>
+  </div>
+</div>
